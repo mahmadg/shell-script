@@ -5,8 +5,21 @@ read response
 
 if [[ "$response" == "yes" ]]; then
     echo "You chose to continue."
+read -p "Enter your first name: " fname
+read -p "Enter your last name: " lname
+echo "you entered "$fname $lname
+sleep 5
+echo -n "Loading profile: ["
+for i in {1..50}; do
+    sleep 0.1  # Simulate work
+    echo -n "#"  # Append a hash mark
+done
+echo "] Completed!"
+
+
 elif [[ "$response" == "no" ]]; then
     echo "You chose not to continue."
 else
     echo "Invalid response. Please enter yes or no."
 fi
+
